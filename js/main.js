@@ -43,24 +43,30 @@ function onBallClick3() {
 function onBallClick4() {
     const numReduce = getRandomInt(20, 61)
 
+    console.log(numReduce);
+
     const elBall1 = document.querySelector('.ball')
     const elBall2 = document.querySelector('.ball2')
 
-    const ballSize1 = ballStyle1.width
     const num1 = elBall1.innerText
-    const newSize1 = ballSize1 - numReduce
+    var newSize1 = num1 - numReduce
+    console.log(newSize1);
 
-    const ballSize2 = ballStyle2.width
+
+    if (newSize1 >= 100) {
+        elBall1.style.width = newSize1 + 'px'
+        elBall1.style.height = newSize1 + 'px'
+        elBall1.innerText = newSize1
+    }
+
     const num2 = elBall2.innerText
-    const newSize2 = ballSize2 - numReduce
+    var newSize2 = num2 - numReduce
+    console.log(newSize2);
 
-    elBall1.style.width = newSize1
-    elBall2.style.width = newSize2
-
-    elBall1.style.height = newSize1
-    elBall2.style.height = newSize2
-
-    elBall1.innerText = newSize1
-    elBall2.innerText = newSize2
+    if (newSize2 >= 100) {
+        elBall2.style.width = newSize2 + 'px'
+        elBall2.style.height = newSize2 + 'px'
+        elBall2.innerText = newSize2
+    }
 
 }
