@@ -3,6 +3,21 @@ var diameter = 100
 // const ball1Color = 'yellow'
 // const ball2Color = 'green' 
 
+function onInit(){
+    const elBody = document.querySelector('body')
+    elBody.style.backgroundColor = 'black'
+
+    const elBall1 = document.querySelector('.ball')
+    elBall1.style.backgroundColor = 'yellow'
+    elBall1.style.width = '100px'
+    elBall1.style.height = '100px'
+
+    const elBall2 = document.querySelector('.ball2')
+    elBall2.style.backgroundColor = 'green'
+    elBall2.style.width = '100px'
+    elBall2.style.height = '100px'
+}
+
 function onBallClick(elBall, maxDiameter) {
     diameter += getRandomInt(20, 61)
     if (diameter > maxDiameter) diameter = 100
@@ -75,3 +90,4 @@ function onBallClick5(){
     const elBody = document.querySelector('body')
     elBody.style.backgroundColor = getRandomColor()
 }
+
