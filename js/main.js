@@ -2,7 +2,7 @@
 var diameter = 100
 
 function onBallClick(elBall){
-    diameter += 50
+    diameter += getRandomInt(20, 61)
     if(diameter > 400) diameter = 100
 
     elBall.style.width = diameter + 'px'
