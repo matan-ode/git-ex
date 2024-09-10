@@ -11,11 +11,13 @@ function onInit(){
     elBall1.style.backgroundColor = 'yellow'
     elBall1.style.width = '100px'
     elBall1.style.height = '100px'
+    elBall1.innerText = 100
 
     const elBall2 = document.querySelector('.ball2')
     elBall2.style.backgroundColor = 'green'
     elBall2.style.width = '100px'
     elBall2.style.height = '100px'
+    elBall2.innerText = 100
 }
 
 function onBallClick(elBall, maxDiameter) {
