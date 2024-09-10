@@ -2,8 +2,9 @@
 var diameter = 100
 // const ball1Color = 'yellow'
 // const ball2Color = 'green' 
+var isHoverSix = false
 
-function onInit(){
+function onInit() {
     const elBody = document.querySelector('body')
     elBody.style.backgroundColor = 'black'
 
@@ -40,6 +41,7 @@ function onBallClick3() {
 
     const elBall2 = document.querySelector('.ball2')
     const ballStyle2 = getComputedStyle(elBall2)
+
     const ballColor2 = ballStyle2.backgroundColor
     const ballSize2 = ballStyle2.width
     const num2 = elBall2.innerText
@@ -60,14 +62,12 @@ function onBallClick3() {
 function onBallClick4() {
     const numReduce = getRandomInt(20, 61)
 
-    console.log(numReduce);
 
     const elBall1 = document.querySelector('.ball')
     const elBall2 = document.querySelector('.ball2')
 
     const num1 = elBall1.innerText
     var newSize1 = num1 - numReduce
-    console.log(newSize1);
 
 
     if (newSize1 >= 100) {
@@ -88,8 +88,57 @@ function onBallClick4() {
 
 }
 
-function onBallClick5(){
+function onBallClick5() {
     const elBody = document.querySelector('body')
     elBody.style.backgroundColor = getRandomColor()
 }
 
+function onBallOver6() {
+    var count = 0
+    isHoverSix = true
+    setTimeout(() => {
+        if (!isHoverSix) return
+        var playClicks = setInterval(() => {
+            count++
+            if (!isHoverSix || count === 10) {
+                clearInterval(playClicks)
+                return
+            } else {
+                const elBall1 = document.querySelector('.ball')
+                const elBall2 = document.querySelector('.ball2')
+                onBallClick3()
+                onBallClick(elBall1, 200)
+                onBallClick(elBall2, 500)
+                onBallClick4()
+            }
+        }, 2000)
+    }, 2000)
+
+    // isHoverSix = true
+    // var currTime = Date.now()
+    // var timeCheck = setInterval(() => {
+    //     if(isHoverSix = false){ 
+    //         clearInterval(timeCheck)
+    //     }
+    //     var timer = Date.now() - currTime
+    //     if(timer === 2000){
+    //         var startClicks = setInterval(()=> {
+    //             const elBall1 = document.querySelector('.ball')
+    //             const elBall2 = document.querySelector('.ball2')
+    //             onBallClick(elBall1, 200)
+    //             onBallClick(elBall2, 500)
+    //             onBallClick3()
+    //             onBallClick4()
+    //             if(isHoverSix = false){ 
+    //                 clearInterval(startClicks)
+    //                 clearInterval(timeCheck)
+    //             }
+    //         },2000)
+    //     }
+    // }, 1000)
+
+}
+
+function onBallOut6() {
+    isHoverSix = false
+}
