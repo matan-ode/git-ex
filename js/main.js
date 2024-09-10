@@ -70,3 +70,8 @@ function onBallClick4() {
     }
 
 }
+
+function onBallClick5(){
+    const elBody = document.querySelector('body')
+    elBody.style.backgroundColor = getRandomColor()
+}
