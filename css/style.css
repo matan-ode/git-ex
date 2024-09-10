@@ -45,3 +45,21 @@ h1 {
 
     transition: 1s;
 }
+
+.ball3 {
+    display: flex;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+    
+    font-size: 22px;
+    font-weight: bold;
+
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+
+    transition: 1s;
+}
