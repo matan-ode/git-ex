@@ -8,10 +8,15 @@ h1 {
 }
 
 .ball {
+    display: flex;
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: yellow;
-    text-align: center;
     margin: auto;
+    font-size: 22px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+
 }
